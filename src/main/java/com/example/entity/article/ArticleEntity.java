@@ -1,11 +1,14 @@
-package com.example.entity;
+package com.example.entity.article;
 
+import com.example.entity.attach.AttachEntity;
+import com.example.entity.CategoryEntity;
+import com.example.entity.ProfileEntity;
+import com.example.entity.RegionEntity;
 import com.example.enums.ArticleStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter

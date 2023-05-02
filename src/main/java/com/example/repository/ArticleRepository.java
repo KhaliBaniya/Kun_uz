@@ -1,9 +1,9 @@
 package com.example.repository;
 
-import com.example.entity.ArticleEntity;
+import com.example.entity.article.ArticleEntity;
 import com.example.enums.ArticleStatus;
-import com.example.enums.GeneralStatus;
 import com.example.mapper.ArticleShortInfoMapper;
+import com.example.mapper.IArticleShortInfoMapper;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -39,4 +39,10 @@ public interface ArticleRepository extends CrudRepository<ArticleEntity, String>
     List<ArticleShortInfoMapper> find5ByTypeIdNative(@Param("typeId") Integer typeId,
                                                      @Param("status") String status,
                                                      @Param("limit") Integer limit);
+
+    @Query(value = "select a.id as id, a.title as title, a.description as description, a.imageId as imageId, a.published_date as publishedDate " +
+            " from article  a  where a.status =?1 and a.visible =true and a.id not in (?2) order by a.published_date desc limit 8",
+            nativeQuery = true)
+    List<IArticleShortInfoMapper> getLast8Native(ArticleStatus status, List<String> idList);
+
 }

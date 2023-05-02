@@ -1,7 +1,7 @@
 package com.example.service;
 
 import com.example.dto.AttachDTO;
-import com.example.entity.AttachEntity;
+import com.example.entity.attach.AttachEntity;
 import com.example.exps.ItemNotFoundException;
 import com.example.repository.AttachRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +22,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.Calendar;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -211,4 +212,17 @@ public class AttachService {
         return dto;
     }
 
+    public AttachDTO getById(String id) {
+        Optional<AttachEntity> optional = attachRepository.findById(id);
+        if (optional.isEmpty()) {
+            throw new AttachNotFoundException("Attach Not Found");
+        }
+
+        AttachDTO dto = new AttachDTO();
+        dto.setId(id);
+//        dto.setUrl(attachDownloadUrl + "/" + id + "." + optional.get().getExtension());
+        return dto;
+
 }
+}
+

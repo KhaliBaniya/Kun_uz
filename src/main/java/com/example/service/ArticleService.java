@@ -2,10 +2,12 @@ package com.example.service;
 
 import com.example.dto.article.ArticleRequestDTO;
 import com.example.dto.article.ArticleShortInfoDTO;
-import com.example.entity.*;
+import com.example.entity.article.ArticleEntity;
 import com.example.enums.ArticleStatus;
+import com.example.exps.ArticleNotFoundException;
 import com.example.exps.ItemNotFoundException;
 import com.example.mapper.ArticleShortInfoMapper;
+import com.example.mapper.IArticleShortInfoMapper;
 import com.example.repository.ArticleRepository;
 import com.example.repository.CategoryRepository;
 import lombok.AllArgsConstructor;
@@ -129,4 +131,26 @@ public class ArticleService {
         }
         return optional.get();
     }
-}
+    public ArticleEntity getById(String id) {
+        Optional<ArticleEntity> optional = articleRepository.findById(id);
+        if (optional.isEmpty()) {
+            throw new ArticleNotFoundException("Article Not Found");
+        }
+        return optional.get();
+    }
+    public List<ArticleShortInfoDTO> getLast8(List<String> idList) {
+
+        List<IArticleShortInfoMapper> list = articleRepository.getLast8Native(ArticleStatus.PUBLISHED, idList);
+
+        List<ArticleShortInfoDTO> dtoList = new LinkedList<>();
+        list.forEach(entity -> {
+            ArticleShortInfoDTO dto = new ArticleShortInfoDTO();
+            dto.setTitle(entity.getTitle());
+            dto.setDescription(entity.getDescription());
+            dto.setPublishedDate(entity.getPublishedDate());
+            dto.setImage(attachService.getById(entity.getImageId()));
+            dtoList.add(dto);
+        });
+        return dtoList;
+    }
+    }

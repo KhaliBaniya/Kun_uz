@@ -198,3 +198,10 @@ ADMIN, MODERATOR, PUBLISHER, USER
             (id, email,message,created_date)
 
        (!Should be limited for email sending. For 1 email 4 sms allowed during 1 min. )
+
+
+
+1. Tag (1,2,3,4)
+10. SavedArticle (1,2,3) -
+8. Comment(1,2,3,4)
+6. Article(finish) (JPQL + Native query)

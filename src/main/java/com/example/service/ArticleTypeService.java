@@ -1,7 +1,7 @@
 package com.example.service;
 
 import com.example.dto.ArticleTypeDto;
-import com.example.entity.ArticleTypeEntity;
+import com.example.entity.article.ArticleTypeEntity;
 import com.example.exps.ItemNotFoundException;
 import com.example.repository.ArticleTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
