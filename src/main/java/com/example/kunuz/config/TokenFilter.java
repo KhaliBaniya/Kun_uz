@@ -14,7 +14,7 @@ import org.springframework.web.filter.GenericFilterBean;
 
 import java.io.IOException;
 
-/*
+
 @Component
 public class TokenFilter extends GenericFilterBean {
 
@@ -45,4 +45,4 @@ public class TokenFilter extends GenericFilterBean {
         request.setAttribute("role", jwtDto.getRole());
         filterChain.doFilter(request, response);
     }
-}*/
+}

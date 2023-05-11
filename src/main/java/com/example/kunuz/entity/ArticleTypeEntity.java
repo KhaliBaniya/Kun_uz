@@ -20,15 +20,21 @@ public class ArticleTypeEntity {
     private String key;
 
     @Column
-    private String name_uz;
+    private String nameUz;
 
     @Column
-    private String name_ru;
+    private String nameRu;
 
     @Column
-    private String name_en;
+    private String nameEn;
 
     @Column(name = "created_date")
     private LocalDateTime createdDate;
 
+    public ArticleTypeEntity() {
+    }
+
+    public ArticleTypeEntity(Integer id) {
+        this.id = id;
+    }
 }

@@ -1,8 +1,8 @@
 package com.example.kunuz.entity.comment;
 
 
+import com.example.kunuz.entity.ArticleEntity;
 import com.example.kunuz.entity.ProfileEntity;
-import com.example.kunuz.entity.article.ArticleEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

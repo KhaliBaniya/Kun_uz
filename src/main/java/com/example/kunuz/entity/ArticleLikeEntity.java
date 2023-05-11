@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 
 @Entity
-@Table(name = "article_like",uniqueConstraints = @UniqueConstraint(columnNames = {"profile_id","article_id"}))
+@Table(name = "article_like", uniqueConstraints = @UniqueConstraint(columnNames = {"profile_id", "article_id"}))
 @Getter
 @Setter
 public class ArticleLikeEntity {
@@ -17,12 +17,17 @@ public class ArticleLikeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "profile_id")
+    private Integer profileId;
     @ManyToOne
-    @JoinColumn(name = "profile_id")
+    @JoinColumn(name = "profile_id", insertable = false, updatable = false)
     private ProfileEntity profile;
 
+
+    @Column(name = "article_id")
+    private String articleId;
     @ManyToOne
-    @JoinColumn(name = "article_id")
+    @JoinColumn(name = "article_id", insertable = false, updatable = false)
     private ArticleEntity article;
 
 
@@ -32,4 +37,4 @@ public class ArticleLikeEntity {
     @Column
     @Enumerated(EnumType.STRING)
     private LikeStatus status;
- }
+}

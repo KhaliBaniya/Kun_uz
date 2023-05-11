@@ -1,6 +1,6 @@
 package com.example.kunuz.repository;
 
-import com.example.kunuz.entity.article.ArticleTypeEntity;
+import com.example.kunuz.entity.ArticleTypeEntity;
 import com.example.kunuz.mapper.IArticleTypeMapper;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

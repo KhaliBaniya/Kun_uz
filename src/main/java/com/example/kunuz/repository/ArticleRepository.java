@@ -1,11 +1,10 @@
 package com.example.kunuz.repository;
 
-import com.example.kunuz.entity.article.ArticleEntity;
-import com.example.kunuz.entity.article.ArticleTypeEntity;
+import com.example.kunuz.entity.ArticleEntity;
+import com.example.kunuz.entity.ArticleTypeEntity;
 import com.example.kunuz.enums.ArticleStatus;
 import com.example.kunuz.mapper.ArticleShortInfoMapper;
 import com.example.kunuz.mapper.IArticleShortInfoMapper;
-import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;

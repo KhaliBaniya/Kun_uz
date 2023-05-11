@@ -1,7 +1,6 @@
 package com.example.kunuz.entity;
 
 import com.example.kunuz.enums.ArticleStatus;
-import jakarta.annotation.Generated;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,10 +17,8 @@ public class ArticleEntity {
 
     @Id
     @GeneratedValue(generator = "generator_uuid")
-    @GenericGenerator(name = "generator_uuid",
-            strategy = "org.hibernate.id.UUIDGenerator")
+    @GenericGenerator(name = "generator_uuid", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
-
 
     @Column
     private String title;
@@ -33,22 +30,39 @@ public class ArticleEntity {
     private String content;
 
     @Column(name = "shared_count")
-    private Integer sharedCount;
+    private Integer sharedCount = 0;
 
+    @Column(name = "region_id")
+    private Integer regionId;
     @ManyToOne
-    @JoinColumn(name = "region_id")
+    @JoinColumn(name = "region_id", insertable = false, updatable = false)
     private RegionEntity region;
 
+
+    @Column(name = "article_type_id")
+    private Integer articleTypeId;
     @ManyToOne
-    @JoinColumn(name = "article_type_id")
+    @JoinColumn(name = "article_type_id", insertable = false, updatable = false)
     private ArticleTypeEntity articleType;
 
+
+    @Column(name = "moderator_id")
+    private Integer moderatorId;
     @ManyToOne
-    @JoinColumn(name = "moderator_id")
+    @JoinColumn(name = "moderator_id", insertable = false, updatable = false)
     private ProfileEntity moderator;
 
+    @Column(name = "image_id")
+    private String imageId;
     @ManyToOne
-    @JoinColumn(name = "publisher_id")
+    @JoinColumn(name = "image_id", insertable = false, updatable = false)
+    private AttachEntity image;
+
+
+    @Column(name = "publisher_id")
+    private Integer publisherId;
+    @ManyToOne
+    @JoinColumn(name = "publisher_id",insertable = false,updatable = false)
     private ProfileEntity publisher;
 
     @Enumerated(EnumType.STRING)
@@ -56,16 +70,22 @@ public class ArticleEntity {
     private ArticleStatus status;
 
     @Column(name = "created_date")
-    private LocalDateTime createdDate;
+    private LocalDateTime createdDate = LocalDateTime.now();
 
     @Column(name = "published_date")
     private LocalDateTime publishedDate;
 
     @Column
-    private Boolean visible;
+    private Boolean visible = true;
 
     @Column(name = "view_count")
-    private Integer viewCount;
+    private Integer viewCount = 0;
+
+    @Column(name = "like_count")
+    private Integer likeCount = 0;
+
+    @Column(name = "dislike_count")
+    private Integer dislikeCount = 0;
 }
 
 

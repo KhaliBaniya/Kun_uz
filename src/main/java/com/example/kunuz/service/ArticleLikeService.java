@@ -1,6 +1,6 @@
 package com.example.kunuz.service;
 
-import com.example.kunuz.entity.article.ArticleLikeEntity;
+import com.example.kunuz.entity.ArticleLikeEntity;
 import com.example.kunuz.enums.Language;
 import com.example.kunuz.enums.LikeStatus;
 import com.example.kunuz.exp.ArticleLikeAlreadyExists;

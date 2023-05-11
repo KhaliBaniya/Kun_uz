@@ -2,8 +2,7 @@ package com.example.kunuz.repository.custom;
 
 
 import com.example.kunuz.dto.article.ArticleFilterDTO;
-import com.example.kunuz.entity.ProfileEntity;
-import com.example.kunuz.entity.article.ArticleEntity;
+import com.example.kunuz.entity.ArticleEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,8 +3,8 @@ POST localhost:8080/auth/registration
 Content-Type: application/json
 
 {
-  "name": "Azimjon",
-  "surname": "Nazarov"
+  "name": "Xumoyun",
+  "surname": "Eshboyev"
 }
 
 ### login
@@ -13,8 +13,8 @@ Content-Type: application/json
 Accept-Language: RU
 
 {
-  "email": "nazarovazimjon888@gmail.com",
-  "password": "200622az"
+  "email": "xumoyunking@gmail.com",
+  "password": "251a1a5"
 }
 
 ### init admin

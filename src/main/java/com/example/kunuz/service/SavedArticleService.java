@@ -2,8 +2,8 @@ package com.example.kunuz.service;
 
 import com.example.kunuz.dto.article.ArticleShortInfoDTO;
 import com.example.kunuz.dto.article.SavedArticleResponseDTO;
-import com.example.kunuz.entity.article.ArticleEntity;
-import com.example.kunuz.entity.article.SavedArticleEntity;
+import com.example.kunuz.entity.ArticleEntity;
+import com.example.kunuz.entity.SavedArticleEntity;
 import com.example.kunuz.enums.Language;
 import com.example.kunuz.exp.ArticleAlreadySaved;
 import com.example.kunuz.exp.ArticleNotFoundException;

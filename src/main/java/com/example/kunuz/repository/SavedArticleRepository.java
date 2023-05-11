@@ -1,6 +1,6 @@
 package com.example.kunuz.repository;
 
-import com.example.kunuz.entity.article.SavedArticleEntity;
+import com.example.kunuz.entity.SavedArticleEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

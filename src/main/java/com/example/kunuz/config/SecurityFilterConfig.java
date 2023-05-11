@@ -5,7 +5,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/*
+
 @Configuration
 public class SecurityFilterConfig {
     private final TokenFilter tokenFilter;
@@ -33,4 +33,4 @@ public class SecurityFilterConfig {
 
     }
 }
-*/
+

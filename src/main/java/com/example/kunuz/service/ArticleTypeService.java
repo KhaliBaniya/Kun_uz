@@ -2,7 +2,7 @@ package com.example.kunuz.service;
 
 import com.example.kunuz.dto.article.ArticleTypeShortDTO;
 import com.example.kunuz.dto.article.ArticleTypeDTO;
-import com.example.kunuz.entity.article.ArticleTypeEntity;
+import com.example.kunuz.entity.ArticleTypeEntity;
 import com.example.kunuz.enums.Language;
 import com.example.kunuz.exp.ArticleTypeNotFoundException;
 import com.example.kunuz.mapper.IArticleTypeMapper;
