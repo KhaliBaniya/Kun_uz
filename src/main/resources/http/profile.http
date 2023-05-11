@@ -1,24 +1,43 @@
-### Create profle
-POST localhost:8080/api/v1/profile
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODE2NDAwMTksImlkIjoyLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODE3MjY0MTksImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.Lk2Apu8oMBWD9rCRsIuOiZeWcy1staS-o5x_SwGbSt8kGfSWZsHUdRNQxGRVTdTMW3dhKtMLb2vIlaTVXrVLrA
+### create
+POST localhost:8080/profile/admin/create
 Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzA4MzQ4NDIsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2NzA5MjEyNDIsImlzcyI6Imt1bnV6IHRlc3QgcG9ydGFsaSJ9.RzjsDsbF4Zw2PaqKI_520vbbbOFMnoSwcm52nmfQqLf5qmaFNBmU3Xa_GQUfATPHztw-EfSggyZ4StGqb4TCVA
 
 {
-  "name": "Toshmat",
-  "surname": "Valiyev",
-  "email": "toshmat@mail.ru",
-  "phone": "1213",
-  "password": "123456",
+  "name": "m",
+  "surname": "mod",
+  "email": "moderator@gmail.com",
+  "password": "200622az",
   "role": "MODERATOR"
 }
-### Registration
-POST localhost:8080/api/v1/auth/register
+
+### update admin
+PUT localhost:8080/profile/user
 Content-Type:  application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzA0MDgzMTksImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2NzA0OTQ3MTksImlzcyI6Imt1bnV6IHRlc3QgcG9ydGFsaSJ9.Jl27mscN6Fz0GJXul6QihKgvaSJO7I3ZSpw9qwym88lhWvcbMKKpvYFYNn4HnfKR4HLll6J3ETUT-Bv9ODL6Rg
 
 {
-  "name": "Alish",
-  "surname": "Aliyev",
-  "phone": "1213",
-  "email": "alish1@mail.ru",
-  "password": "123456"
+   "id": 1,
+  "name": "Admin",
+  "surname": "Adminjon",
+  "password": "200622az"
+}
+
+
+### get list
+GET localhost:8080/profile/admin/list?page=0&size=20
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzA2Nzc4NTQsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2NzA3NjQyNTQsImlzcyI6Imt1bnV6IHRlc3QgcG9ydGFsaSJ9.1EOwrQ4FRmChaPixScF6U1y_MGdYAqj8x9AWi_kv6R0OGeeSahXdHDdVkQsPk3eNbcH6d61dyq91WiRscwWR7Q
+
+### delete by id
+DELETE localhost:8080/profile/delete/1
+Authorization: Bearer
+
+
+### filter
+POST localhost:8080/profile/filter?page=0&size=10
+Content-Type: application/json
+
+{
+  "fromDate":"2022-10-09",
+  "toDate": "2022-12-14"
 }

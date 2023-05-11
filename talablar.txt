@@ -201,7 +201,7 @@ ADMIN, MODERATOR, PUBLISHER, USER
 
 
 
-1. Tag (1,2,3,4)
-10. SavedArticle (1,2,3) -
+1. Tag (1,2,3,4) chala
+10. SavedArticle (1,2,3) chala
 8. Comment(1,2,3,4)
 6. Article(finish) (JPQL + Native query)
